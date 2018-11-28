@@ -165,13 +165,13 @@
 <meta property="og:site_name" content="SRT">
 <meta property="og:description" content="转自：碧尧博客地址 深度学习环境搭建开始接触深度学习一年多时间了，总是有种技术发展飞快，没等你掌握现有技术更牛X的技术又出来了。身处AI浪潮中，到现在越发有种感觉：深度学习可能很多问题都能解决，但我们自己并没有那么多精力去研究那么多方面，自然语言处理，自动驾驶，人脸识别等等，选定一个方向深入研究才是正解。至少目前是这么理解的，不对希望朋友指正！ 如今深度学习的框架很多，Caffe，TensorFl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://hdu-srt.github.io/images/caffe_1.png">
-<meta property="og:image" content="https://hdu-srt.github.io/images/caffe_2.png">
+<meta property="og:image" content="https://hdu-srt.github.io/2017/07/24/深度学习环境搭建/images/caffe_1.png">
+<meta property="og:image" content="https://hdu-srt.github.io/2017/07/24/深度学习环境搭建/images/caffe_2.png">
 <meta property="og:updated_time" content="2018-08-27T13:06:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习环境搭建------by邵碧尧">
 <meta name="twitter:description" content="转自：碧尧博客地址 深度学习环境搭建开始接触深度学习一年多时间了，总是有种技术发展飞快，没等你掌握现有技术更牛X的技术又出来了。身处AI浪潮中，到现在越发有种感觉：深度学习可能很多问题都能解决，但我们自己并没有那么多精力去研究那么多方面，自然语言处理，自动驾驶，人脸识别等等，选定一个方向深入研究才是正解。至少目前是这么理解的，不对希望朋友指正！ 如今深度学习的框架很多，Caffe，TensorFl">
-<meta name="twitter:image" content="https://hdu-srt.github.io/images/caffe_1.png">
+<meta name="twitter:image" content="https://hdu-srt.github.io/2017/07/24/深度学习环境搭建/images/caffe_1.png">
 
 
 
@@ -567,7 +567,7 @@
 <p>重启后用下面命令查看驱动版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/driver/nvidia/version</span><br></pre></td></tr></table></figure>
 <h3 id="CUDA"><a href="#CUDA" class="headerlink" title="CUDA"></a>CUDA</h3><p>到<a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">CUDA</a>官网下载CUDA安装文件，选择对应版本</p>
-<img src="/images/caffe_1.png">
+<img src="/2017/07/24/深度学习环境搭建/images/caffe_1.png">
 <p>这里有下载deb [local]文件，后面会说runfile [local]的用法，先卖个关子。<br>下载好后cd到存放安装的文件夹，使用一下命令，文件名千万别手输，善用tab键</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i cuda-repo-ubuntu1604*amd64.deb</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install cuda</span><br></pre></td></tr></table></figure>
 <p>安装结束，添加环境变量（如果安装服务器，环境变量在每个用户下都需要添加一次，应该是有更聪明的方法，目前还没有找到）</p>
@@ -575,7 +575,7 @@
 <p>查看安装CUDA版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
 <p>显示下图信息说明安装好了</p>
-<img src="/images/caffe_2.png">
+<img src="/2017/07/24/深度学习环境搭建/images/caffe_2.png">
 <p>再重启下电脑</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
 <h3 id="cuDNN"><a href="#cuDNN" class="headerlink" title="cuDNN"></a>cuDNN</h3><p>这是深度学习训练过程中的加速算法包，到<a href="https://developer.nvidia.com/cudnn" target="_blank" rel="noopener">cuDNN</a> 下载对应的安装包，cd到安装包所在文件夹</p>

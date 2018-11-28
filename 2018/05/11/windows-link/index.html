@@ -165,13 +165,12 @@
 <meta property="og:site_name" content="SRT">
 <meta property="og:description" content="windows远程链接问题最近因为微软的更新我们在远程链接windows服务器的时候会出现如下问题：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://hdu-srt.github.io/2018/05/11/windows-link/images/远程连接问题.png">
-<meta property="og:image" content="https://hdu-srt.github.io/2018/05/11/windows-link/images/删除文件.jpg">
-<meta property="og:updated_time" content="2018-11-28T08:05:39.581Z">
+<meta property="og:image" content="https://hdu-srt.github.io/images/删除文件.jpg">
+<meta property="og:updated_time" content="2018-11-28T08:20:49.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows远程链接问题">
 <meta name="twitter:description" content="windows远程链接问题最近因为微软的更新我们在远程链接windows服务器的时候会出现如下问题：">
-<meta name="twitter:image" content="https://hdu-srt.github.io/2018/05/11/windows-link/images/远程连接问题.png">
+<meta name="twitter:image" content="https://hdu-srt.github.io/images/删除文件.jpg">
 
 
 
@@ -367,7 +366,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">22</span></a>
 
   </li>
         
@@ -526,7 +525,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-28 08:05:39" itemprop="dateModified" datetime="2018-11-28T08:05:39Z">2018-11-28</time>
+                <time title="修改时间：2018-11-28 08:20:49" itemprop="dateModified" datetime="2018-11-28T08:20:49Z">2018-11-28</time>
               
             
           </span>
@@ -560,7 +559,7 @@
 
       
         <h1 id="windows远程链接问题"><a href="#windows远程链接问题" class="headerlink" title="windows远程链接问题"></a>windows远程链接问题</h1><p>最近因为微软的更新我们在远程链接windows服务器的时候会出现如下问题：<br><a id="more"></a></p>
-<img src="/2018/05/11/windows-link/images/远程连接问题.png">
+<p>！[img] (/home/kun/Documents/srtblog/source/_posts/windows-link/删除文件.jpg )</p>
 <p>使用微软官方建议修改本地组策略：计算机配置&gt;管理模板&gt;系统&gt;凭据分配&gt;加密Oracle修正 选择启用并选择易受攻击。</p>
 <p>但是我们是win 10 家庭版没有组策略，我也尝试过网上添加的方式。如下：</p>
 <p>1、打开txt复制以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">pushd &quot;%~dp0&quot;</span><br><span class="line"></span><br><span class="line">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;List.txt</span><br><span class="line"></span><br><span class="line">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;List.txt</span><br><span class="line"></span><br><span class="line">for /f %%i in (&apos;findstr /i . List.txt 2^&gt;nul&apos;) do dism /online /norestart /add-package:&quot;C:\Windows\servicing\Packages\%%i&quot;</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure></p>
@@ -569,7 +568,7 @@
 <p>4、win+r弹出运行窗口，输入gpedit.msc,打开本地组策略</p>
 <p>但是我们好像无法找到<strong>加密Oracle修正</strong>这一项。</p>
 <h1 id="解决方法一"><a href="#解决方法一" class="headerlink" title="解决方法一"></a>解决方法一</h1><p>我们没办法添加组策略，那么我最终选择就是卸载掉微软的更新。<br>在控制面板，卸载程序，左边找到产看已安装的更新，翻到最底下找到如下的更新卸载后重启电脑即可。【但是这种方法不好的是我们在关机后卸载掉的更新又会回来，这样很不方便】</p>
-<img src="/2018/05/11/windows-link/images/删除文件.jpg">
+<img src="/images/删除文件.jpg">
 <h1 id="解决方法二-较好的方法"><a href="#解决方法二-较好的方法" class="headerlink" title="解决方法二(较好的方法)"></a>解决方法二(较好的方法)</h1><p>1、运行regedit，打开注册表</p>
 <p>2、找文件夹 路径：</p>
 <p>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters（正常情况下只会到System，需要手动添加后两项路径）</p>
@@ -621,6 +620,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/29/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -683,7 +686,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
